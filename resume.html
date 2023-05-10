@@ -4,7 +4,312 @@
         <style>
             @import url('https://fonts.googleapis.com/css2?family=Karla:wght@400;800&display=swap');
             
+            :root {<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+            @import url('https://fonts.googleapis.com/css2?family=Karla:wght@400;800&display=swap');
+            
             :root {
+                margin: 70px 20px 0px 20px;
+                font-size: clamp(2vh, 30px, 5vh);
+                font-family: 'Karla', sans-serif;
+            }
+            
+            #switch, #tabs {
+                margin: 1% 50%;
+                transform: translateX(-50%);
+                display: flex;
+                align-self: flex-end;
+                width: fit-content;
+                border-radius: 1vw;
+                padding: 5px;
+            }
+
+            #tabs {
+                background-color: rgba(192, 192, 192, 0.3);
+                display: none;
+                padding: 7px;
+            }
+
+            #switch {
+                background-color: rgba(192, 192, 192, 0.3);
+                backdrop-filter: blur(5px);
+                top: 0;
+                z-index: 2;
+                position: fixed;
+            }
+
+            #simple, #styled, #data, #course, #projects{
+                background-color: transparent;
+                border-style:none;
+                border-radius: 5px;
+                height: 5vh;
+                position: relative;
+                z-index: 1;
+                font-size: clamp(2vh, 10px, 5vh);
+            }
+
+            #simple, #styled {
+                width: 10vh;
+            }
+
+            #data, #course, #projects {
+                width: 25vh;
+                transition: 0.3s;
+            }
+
+            #data {
+                background-color: white;
+            }
+
+            #move {
+                background-color: white;
+                height: 5vh;
+                width: 10vh;
+                position: absolute;
+                border-radius: 5px;
+                transition: 0.3s;
+            }
+
+            p {
+                width: 40vw;
+                padding: 0px 0px 15px 10px;
+                margin: 0;
+                float: left;
+                line-height: 1.3em;
+            }
+
+            h1, h2, h3, h4{
+                margin: 0px;
+                padding: 5px;
+            }
+
+            .left, .right {
+            display: flex;
+            flex-direction: column;
+            position:relative;
+            height: auto;
+            margin: 0px;
+            }
+
+            .left {
+            width: 50vw;
+            float: left;
+            }
+
+            .right {
+            float: right;
+            }
+
+            .banner {
+                background-color: orange;
+                display: block;
+                width: auto;
+                position:relative;
+                transition: 0.3s;
+                font-size: clamp(3vw);
+            }
+
+            .name {
+                font-size: clamp(3vw, 75px, 6vw);
+                color: white;
+            }
+
+            #name::after {
+                content: "";
+                width: auto;
+                height: 2px;
+                background-color: orange;
+                display: block;
+                margin-top: 10px;
+            }
+
+            #info {
+                float: left;
+                margin-bottom: 10px;
+            }
+
+            #summary {
+                float: left;
+                display: absolute;
+                transition: 0.3s;
+            }
+
+        </style>
+    </head>
+    <body>
+        <div id="switch">
+            <button id="simple" onclick="simple()">simple</button>
+            <button id="styled" onclick="styled()">styled</button>
+            <div id="move"></div>
+        </div>
+        <h1 id="name">MOHAMMED AFZAL SHAREEF</h1>
+        <div style="display:flex; flex-direction: column; float: left;">
+        <h2 id="summary">SUMMARY:</h2>
+        <p id="info">
+                    Front-end developer currently working with web looking to expand into software and mobile. Currently working with HTML, CSS and Javascript for 2 years. Passionate about UI/UX and Graphic design. Highly adept at both individual and collabrative projects.
+        </p>
+        </div>
+        <div id="tabs">
+            <button id="data" onclick="data()">Skills & Basic Data</button>
+            <button id="course" onclick="course()">Courses & Certifications</button>
+            <button id="projects" onclick="projects()">Projects & Experience</button>
+        </div>
+        <div class="right" id="dataR">
+            <h2>Education:</h2>
+            <p>
+                Present: Majoring CSE in LORDS Institute of Engineering and 
+                Technology, Hyderabad<br>
+                Expected graduation 2024<br>
+                2020: Graduated 12th TSBIE, B Graduated<br>
+                2018: Graduated 10th CBSE, 83% Avg
+            </p>
+            <h2>CONTACTS:</h2>
+            <p>
+                Phone: +91 9491232152<br>
+                Email: afz.lrds@gmail.com<br>
+                Linkedin: <a href="https://www.linkedin.com/in/afzal-shareef-2201z">afzal-shareef-2201z</a><br>
+                Github: <a href="https://github.com/wireframeee">wireframeee</a>
+           </p>
+        </div>    
+        <div class="left" id="dataL">    
+            <h2>Technical Skills:</h2>
+            <p>
+                HTML<br>
+                CSS (including tailwind and bootstrap)<br>
+                Javascript<br>
+                Basic Python<br>
+                Graphic designing<br>
+                Figma
+            </p>
+            <h2>Soft Skills:</h2>
+            <p>
+                Good speaker<br>
+                Leadership Qualities<br>
+                Languages: English, Hindi, Urdu<br>
+                Problem Solving
+            </p>
+        </div>
+        <div class="left" id="courseL">
+            <h2>College Courses</h2>
+            <p>
+                Data Structures and Algorithms
+                Database Management
+                Object Oriented Programming
+                Object Oriented Analysis and Design
+                Software Development
+                Software Testing
+                Operating Systems
+                Principles of Programming Languages
+                Computer Networks
+            </p>
+        </div>
+        <div class="right" id="courseR">
+            <h2>Certifications</h2>
+            <p>
+                Hackathon Participation Certificate<br>
+                Debugging Certificate
+            </p>
+        </div>
+        <div class="left" id="projectsL">
+            <h2>Projects</h2>
+            <p>
+                Was UI/UX designer and Front-end designer for project "<a href="https://www.figma.com/proto/S05uLC97jIFJgF5F3PKNLT/OnnCourse?node-id=118-9806&starting-point-node-id=118%3A9806">OnnCourse</a>" submitted to Varisity Hackathon Malaysia 2023. Landed top 25 position internationally.
+            </p>
+        </div>
+        <div class="right" id="projectsR">
+            <h2>Experience</h2>
+            <p>
+                Currently lead graphic designer at ACE student body club @college<br>
+                Designed multiple official certificates and posters for college
+            </p>
+        </div>
+        <script>
+            const move = document.getElementById("move");
+            const name = document.getElementById("name");
+            const info = document.getElementById("info");
+            const summary = document.getElementById("summary");
+            const tabs = document.getElementById("tabs");
+            const tab1 = document.getElementById("data");
+            const tab2 = document.getElementById("course");
+            const tab3 = document.getElementById("projects");
+            const dataL = document.getElementById("dataL");
+            const dataR = document.getElementById("dataR");
+            const courseL = document.getElementById("courseL");
+            const courseR = document.getElementById("courseR");
+            const projectsL = document.getElementById("projectsL");
+            const projectsR = document.getElementById("projectsR");
+
+            function styled() {
+                move.style.transform = "translateX(10vh)";
+                name.classList.add("banner", "name");
+                info.classList.add("banner");
+                summary.style.display = "none";
+                tabs.style.display = "flex";
+                
+                courseL.style.display = "none";
+                courseR.style.display = "none";
+                projectsL.style.display = "none";
+                projectsR.style.display = "none";
+            }
+
+            function simple() {
+                move.style.transform = "translateX(0vh)";
+                name.classList.remove("banner", "name");
+                info.classList.remove("banner");
+                summary.style.display = "block";
+                tabs.style.display = "none";
+
+                dataL.style.display = "flex";
+                dataR.style.display = "flex";
+                courseL.style.display = "flex";
+                courseR.style.display = "flex";
+                projectsL.style.display = "flex";
+                projectsR.style.display = "flex";
+            }
+
+            function data() {
+                tab1.style.backgroundColor = "white";
+                tab2.style.backgroundColor = "transparent";
+                tab3.style.backgroundColor = "transparent";
+
+                dataL.style.display = "flex";
+                dataR.style.display = "flex";
+                courseL.style.display = "none";
+                courseR.style.display = "none";
+                projectsL.style.display = "none";
+                projectsR.style.display = "none";
+            }
+
+            function course() {
+                tab1.style.backgroundColor = "transparent";
+                tab2.style.backgroundColor = "white";
+                tab3.style.backgroundColor = "transparent";
+
+                dataL.style.display = "none";
+                dataR.style.display = "none";
+                courseL.style.display = "flex";
+                courseR.style.display = "flex";
+                projectsL.style.display = "none";
+                projectsR.style.display = "none";
+            }
+
+            function projects() {
+                tab1.style.backgroundColor = "transparent";
+                tab2.style.backgroundColor = "transparent";
+                tab3.style.backgroundColor = "white";
+
+                dataL.style.display = "none";
+                dataR.style.display = "none";
+                courseL.style.display = "none";
+                courseR.style.display = "none";
+                projectsL.style.display = "flex";
+                projectsR.style.display = "flex";
+            }
+        </script>
+    </body>
+</html>
                 margin: 70px 20px 0px 20px;
                 font-size: clamp(2vh, 30px, 5vh);
                 font-family: 'Karla', sans-serif;
